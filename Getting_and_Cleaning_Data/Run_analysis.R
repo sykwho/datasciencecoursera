@@ -1,6 +1,5 @@
 library(plyr)
 
-# 0. Downloading and preparing the files
 
 # Download and unzip the file:
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -30,7 +29,6 @@ activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 featuresNames  <- read.table("./UCI HAR Dataset/features.txt")
 
 
-# 1. Merge the training and test sets to create one data set
 
 
 # Merging the Feature Data
@@ -51,7 +49,6 @@ names(xFeaturesData) <- featuresNames$V2
 allData <- cbind(xFeaturesData, yActivityData, subjectData)
 
 
-# 2. Extract only the measurements on the mean and standard deviation for each measurement
 
 
 # get only columns with mean() or std() in their names
@@ -62,14 +59,12 @@ selectedColumns <- c(as.character(mean_and_std_features), "subject", "activity" 
 allData <- subset(allData, select=selectedColumns)
 
 
-# 3. Use descriptive activity names to name the activities in the data set
 
 
 # update values with correct activity names
 allData$activity <- activityLabels[allData$activity, 2]
 
 
-# 4. Appropriately label the data set with descriptive variable names
 
 
 names(allData) <-gsub("^t", "time", names(allData))
@@ -80,7 +75,7 @@ names(allData) <-gsub("Mag", "Magnitude", names(allData))
 names(allData) <-gsub("BodyBody", "Body", names(allData))
 
 
-# 5. From the data set in step 4, creates a second, independent tidy data set
+
 # with the average of each variable for each activity and each subject.
 
 
