@@ -44,4 +44,4 @@ train: training set together with subject and activity
 test: test set together with subject and activity
 mergeddata: merged data set including both train and test
 summary_data: summary data set with the average of each variable for each activity and each subject
-
+.
