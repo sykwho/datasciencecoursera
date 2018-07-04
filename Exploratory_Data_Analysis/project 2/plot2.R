@@ -1,6 +1,6 @@
 source("downloadArchive.R")
 
-# Load the NEI & SCC data frames.
+# Load the NEI & SCC data
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
