@@ -1,9 +1,9 @@
 # Peer-graded-Assignment-Prediction-Assignment-Writeup
 
 ---
-title: "Module 8"
-author: "kwan lee"
-date: "April 14, 2017"
+title: "Prediction Assignment Writeup"
+author: "Shingo Kitamura"
+date: "July 27, 2018"
 output: html_document
 ---
 
